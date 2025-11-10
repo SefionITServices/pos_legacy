@@ -1,0 +1,115 @@
+# PHP 8.3 Upgrade - Quick Start
+
+## Prerequisites
+- PHP 8.3 installed
+- Composer 2.x installed
+- Backup your database and files
+
+## Upgrade Steps
+
+### 1. Update Composer Dependencies
+```powershell
+# Remove vendor folder and composer.lock for clean install
+Remove-Item -Path vendor -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path composer.lock -ErrorAction SilentlyContinue
+
+# Install dependencies
+composer install
+
+# If you encounter conflicts, try:
+composer update --with-all-dependencies
+```
+
+### 2. Clear All Caches
+```powershell
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan clear-compiled
+```
+
+### 3. Optimize Autoloader
+```powershell
+composer dump-autoload -o
+```
+
+### 4. Update .env (if needed)
+Ensure these variables are set:
+```
+APP_ENV=local
+APP_DEBUG=true
+DB_CONNECTION=mysql
+# ... your other settings
+```
+
+### 5. Run Migrations
+```powershell
+php artisan migrate:status
+# php artisan migrate  # Only if needed
+```
+
+### 6. Test the Application
+```powershell
+# Start development server
+php artisan serve
+
+# Or use Laravel Mix for frontend
+npm install
+npm run dev
+```
+
+## Troubleshooting
+
+### Issue: Composer Memory Limit
+```powershell
+composer install --ignore-platform-reqs
+# or
+$env:COMPOSER_MEMORY_LIMIT=-1; composer install
+```
+
+### Issue: Class Not Found Errors
+```powershell
+composer dump-autoload
+php artisan clear-compiled
+```
+
+### Issue: Nexmo/Vonage Errors
+See `UPGRADE_TO_PHP_8.3.md` section on updating Nexmo to Vonage.
+You may need to manually update controller files.
+
+### Issue: Deprecated Warnings
+These are safe to ignore during initial testing.
+Review `UPGRADE_TO_PHP_8.3.md` for details on fixing them.
+
+## What Changed?
+
+✅ PHP version: 7.3 → 8.3
+✅ Laravel: 8.x → 10.x
+✅ Updated all major dependencies
+✅ Fixed deprecated middleware
+✅ Updated TrustProxies for Laravel 10
+✅ Removed Nexmo, added Vonage support
+✅ Updated database configuration
+
+## Next Steps After Upgrade
+
+1. **Review error logs**: `storage/logs/laravel.log`
+2. **Test critical features**: Sales, purchases, payments, SMS
+3. **Check API endpoints**: Ensure all routes work
+4. **Update Nexmo to Vonage**: See migration script
+5. **Run tests**: `php artisan test` (if tests exist)
+
+## Support Files Created
+
+- `UPGRADE_TO_PHP_8.3.md` - Full upgrade documentation
+- `migrate_nexmo_to_vonage.php` - Nexmo to Vonage migration notes
+
+## Important Notes
+
+⚠️ **Backup First**: Always backup before upgrading
+⚠️ **Test in Development**: Don't upgrade production directly
+⚠️ **Check Dependencies**: Some modules may need updates
+⚠️ **Review Code**: Check for PHP 8.3 breaking changes
+
+For detailed information, see `UPGRADE_TO_PHP_8.3.md`
