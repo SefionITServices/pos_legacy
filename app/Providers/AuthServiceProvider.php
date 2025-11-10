@@ -59,10 +59,11 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(){
+    public function boot()
+    {
         $this->registerPolicies();
 
-        Passport::routes();
-    
+        // Passport::routes() is no longer needed in Passport 11
+        // Routes are automatically registered
     }
 }
