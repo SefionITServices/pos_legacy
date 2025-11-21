@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+    # Upgrade insecure requests to HTTPS
+    <IfModule mod_headers.c>
+        Header always set Content-Security-Policy "upgrade-insecure-requests"
+    </IfModule>
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
