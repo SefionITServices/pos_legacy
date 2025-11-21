@@ -17,7 +17,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 mix.js('resources/src/main.js', 'public').js('resources/src/login.js', 'public')
-    .vue();
+    .vue()
+    .options({
+        processCssUrls: false,
+        postCss: [
+            require('autoprefixer'),
+        ],
+        sassOptions: {
+            implementation: require('sass'),
+        }
+    });
 
     mix.webpackConfig({
         output: {

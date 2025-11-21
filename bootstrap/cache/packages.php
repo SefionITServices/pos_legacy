@@ -1,31 +1,14 @@
 <?php return array (
   'barryvdh/laravel-dompdf' => 
   array (
+    'aliases' => 
+    array (
+      'PDF' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
+      'Pdf' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
+    ),
     'providers' => 
     array (
       0 => 'Barryvdh\\DomPDF\\ServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'PDF' => 'Barryvdh\\DomPDF\\Facade',
-    ),
-  ),
-  'facade/ignition' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Flare' => 'Facade\\Ignition\\Facades\\Flare',
-    ),
-  ),
-  'fideloper/proxy' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
   'intervention/image' => 
@@ -62,13 +45,13 @@
   ),
   'maatwebsite/excel' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    ),
     'aliases' => 
     array (
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
+    ),
+    'providers' => 
+    array (
+      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     ),
   ),
   'macellan/laravel-zip' => 
@@ -89,17 +72,6 @@
       0 => 'Carbon\\Laravel\\ServiceProvider',
     ),
   ),
-  'nexmo/laravel' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Nexmo\\Laravel\\NexmoServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Nexmo' => 'Nexmo\\Laravel\\Facade\\Nexmo',
-    ),
-  ),
   'nunomaduro/collision' => 
   array (
     'providers' => 
@@ -107,23 +79,33 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
-  'nwidart/laravel-modules' => 
+  'nunomaduro/termwind' => 
   array (
     'providers' => 
     array (
-      0 => 'Nwidart\\Modules\\LaravelModulesServiceProvider',
+      0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
+  ),
+  'nwidart/laravel-modules' => 
+  array (
     'aliases' => 
     array (
       'Module' => 'Nwidart\\Modules\\Facades\\Module',
     ),
-  ),
-  'oscarafdev/migrations-generator' => 
-  array (
     'providers' => 
     array (
-      0 => 'Way\\Generators\\GeneratorsServiceProvider',
-      1 => 'OscarAFDev\\MigrationsGenerator\\MigrationsGeneratorServiceProvider',
+      0 => 'Nwidart\\Modules\\LaravelModulesServiceProvider',
+    ),
+  ),
+  'spatie/laravel-ignition' => 
+  array (
+    'aliases' => 
+    array (
+      'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     ),
   ),
 );

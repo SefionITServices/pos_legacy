@@ -1,7 +1,6 @@
 <?php
 
  
-   header("Location: https://invoice.stripe.com/i/acct_1OY1V2L080PmfyNY/live_YWNjdF8xT1kxVjJMMDgwUG1meU5ZLF9TeUJvYjJNU3dKNEJ4YkRGYkRxNDJBMmVvVUNFNHhuLDE0NzIwNDI1MQ0200EbSH0Up3?s=db"); 
 define('LARAVEL_START', microtime(true));
 
 /*

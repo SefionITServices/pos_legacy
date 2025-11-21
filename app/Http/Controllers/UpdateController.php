@@ -49,7 +49,7 @@ class UpdateController extends Controller
     }
 
     private function getLastVersion(){
-        $content = file_get_contents('https://update-stocky.ui-lib.com/stocky_version.json');
+        $content = file_get_contents('https://update-smteg.ui-lib.com/smteg_version.json');
         $content = json_decode($content, true);
         return $content;
     }

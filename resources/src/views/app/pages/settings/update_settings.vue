@@ -24,7 +24,7 @@
                         <strong>{{$t('You_already_have_the_latest_version')}} <span class="badge badge-pill badge-info"></span></strong>
                     </div>
                       <div class="col-md-12 text-center mt-3">
-                        <a href="https://github.com/uilibrary/Stocky-Issues-and-Feature-request" target="_blank"
+                        <a href="https://github.com/uilibrary/SMTeG-Issues-and-Feature-request" target="_blank"
                             class="btn btn-outline-info">{{$t('View_Change_Log')}}</a>
                     </div>
 
@@ -76,10 +76,10 @@
                      </div>
 
                      <div class="col-md-12 mt-3">
-                       <h4 class="mb-3">This video showing you the steps on how to upgrade stocky</h4>
+                       <h4 class="mb-3">This video showing you the steps on how to upgrade SMTeG</h4>
 
                        <iframe width="853" height="480" src="https://www.youtube.com/embed/VwfRtMkxS9U"
-                          title="how to update Stocky step by step" frameborder="0" 
+                          title="how to update SMTeG step by step" frameborder="0" 
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowfullscreen>
                         </iframe>
